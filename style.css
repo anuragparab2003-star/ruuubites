@@ -1,0 +1,1633 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#fffdf9;
+    color:#242424;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-padding{
+    padding:100px 0;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(255,253,249,.9);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;
+    transition:.3s;
+}
+
+.header.scrolled{
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    border-bottom:1px solid #eee;
+}
+
+.navbar{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:23px;
+    font-weight:500;
+}
+
+.logo b{
+    color:#e87532;
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+    background:#fff1e7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#555;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#e87532;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.search-icon-btn{
+    border:none;
+    background:none;
+    font-size:17px;
+    color:#333;
+}
+
+.nav-button{
+    background:#242424;
+    color:#fff;
+    padding:11px 19px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-button:hover{
+    background:#e87532;
+}
+
+.mobile-menu{
+    display:none;
+    border:none;
+    background:none;
+    font-size:21px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    min-height:100vh;
+    padding-top:78px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:#fffaf5;
+}
+
+.hero-container{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:60px;
+}
+
+.hero-shape{
+    position:absolute;
+    border-radius:50%;
+    z-index:0;
+}
+
+.shape-one{
+    width:500px;
+    height:500px;
+    background:#fff0e5;
+    right:-180px;
+    top:-180px;
+}
+
+.shape-two{
+    width:300px;
+    height:300px;
+    background:#f9e8d9;
+    left:-150px;
+    bottom:-180px;
+}
+
+.hero-left,
+.hero-right{
+    position:relative;
+    z-index:1;
+}
+
+.small-title{
+    display:inline-block;
+    padding:9px 15px;
+    background:#fff;
+    color:#e87532;
+    border-radius:50px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:70px;
+    line-height:1.1;
+    margin:22px 0;
+}
+
+.hero h1 span{
+    color:#e87532;
+}
+
+.hero-left > p{
+    max-width:560px;
+    color:#666;
+    font-size:17px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin:32px 0;
+    align-items:center;
+}
+
+.primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#e87532;
+    color:#fff;
+    padding:15px 24px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:700;
+    border:none;
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(232,117,50,.25);
+}
+
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.secondary-btn i{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#fff;
+    color:#e87532;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.hero-stats{
+    display:flex;
+    gap:45px;
+    margin-top:20px;
+}
+
+.hero-stats h3{
+    font-size:24px;
+}
+
+.hero-stats p{
+    font-size:12px;
+    color:#777;
+}
+
+.food-card-main{
+    width:430px;
+    height:430px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(135deg,#f8c59f,#e87532);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    box-shadow:0 30px 60px rgba(232,117,50,.25);
+}
+
+.food-emoji{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:#fffaf5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:150px;
+    box-shadow:inset 0 0 30px rgba(0,0,0,.05);
+}
+
+.floating-card{
+    position:absolute;
+    background:#fff;
+    padding:13px 18px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.floating-card span{
+    font-size:24px;
+}
+
+.floating-card b{
+    display:block;
+    font-size:13px;
+}
+
+.floating-card small{
+    color:#888;
+    font-size:11px;
+}
+
+.floating-one{
+    top:35px;
+    left:-35px;
+}
+
+.floating-two{
+    bottom:45px;
+    right:-25px;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:40px;
+    margin-bottom:45px;
+}
+
+.section-top > div{
+    max-width:600px;
+}
+
+.section-label{
+    display:block;
+    color:#e87532;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    margin-bottom:10px;
+}
+
+.section-top h2,
+.center-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    line-height:1.2;
+}
+
+.section-top > p{
+    max-width:350px;
+    color:#777;
+}
+
+.center-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.center-heading p{
+    color:#777;
+    margin-top:12px;
+}
+
+
+/* =========================================
+   CATEGORIES
+========================================= */
+
+.categories{
+    background:#fff;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.category-card{
+    border:1px solid #eee;
+    padding:30px;
+    border-radius:18px;
+    transition:.3s;
+    background:#fffdf9;
+}
+
+.category-card:hover{
+    transform:translateY(-7px);
+    border-color:#e87532;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.category-emoji{
+    width:65px;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff0e5;
+    border-radius:18px;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.category-card h3{
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.category-card p{
+    color:#777;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.category-card span{
+    font-size:13px;
+    font-weight:700;
+    color:#e87532;
+}
+
+.category-card span i{
+    margin-left:6px;
+}
+
+
+/* =========================================
+   RECIPES
+========================================= */
+
+.featured{
+    background:#fffaf5;
+}
+
+.recipe-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.recipe-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.recipe-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.1);
+}
+
+.recipe-image{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+    position:relative;
+}
+
+.orange-bg{
+    background:#f7d6c2;
+}
+
+.yellow-bg{
+    background:#f8e4a9;
+}
+
+.green-bg{
+    background:#d6ead2;
+}
+
+.recipe-tag{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#fff;
+    color:#e87532;
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:10px;
+    font-weight:700;
+}
+
+.recipe-content{
+    padding:22px;
+}
+
+.recipe-info{
+    display:flex;
+    justify-content:space-between;
+    color:#999;
+    font-size:11px;
+    margin-bottom:10px;
+}
+
+.recipe-content h3{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.recipe-content p{
+    color:#777;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.recipe-content a{
+    color:#e87532;
+    font-size:13px;
+    font-weight:700;
+}
+
+.recipe-content a i{
+    margin-left:5px;
+}
+
+.view-all{
+    text-align:center;
+    margin-top:40px;
+}
+
+.secondary-main-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid #242424;
+    padding:14px 23px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.secondary-main-btn:hover{
+    background:#242424;
+    color:#fff;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about{
+    background:#fff;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:80px;
+}
+
+.about-visual{
+    min-height:460px;
+    background:#fff0e5;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.about-food-circle{
+    width:290px;
+    height:290px;
+    background:#e87532;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:130px;
+}
+
+.experience-card{
+    position:absolute;
+    bottom:35px;
+    right:-20px;
+    background:#fff;
+    padding:17px 22px;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+
+.experience-card b{
+    display:block;
+}
+
+.experience-card span{
+    color:#888;
+    font-size:12px;
+}
+
+.about-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.about-text h2 span{
+    color:#e87532;
+}
+
+.about-text p{
+    color:#777;
+    margin-bottom:15px;
+}
+
+.about-points{
+    margin:25px 0;
+}
+
+.about-points div{
+    margin:12px 0;
+    font-size:14px;
+    font-weight:600;
+}
+
+.about-points i{
+    color:#e87532;
+    margin-right:10px;
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.newsletter{
+    background:#fffaf5;
+}
+
+.newsletter-box{
+    background:#242424;
+    color:#fff;
+    border-radius:25px;
+    padding:60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.newsletter-box h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    line-height:1.2;
+    margin-bottom:12px;
+}
+
+.newsletter-box p{
+    color:#bbb;
+}
+
+.newsletter-box form{
+    display:flex;
+    gap:10px;
+}
+
+.newsletter-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:15px;
+    border-radius:9px;
+}
+
+.newsletter-box button{
+    border:none;
+    white-space:nowrap;
+    background:#e87532;
+    color:#fff;
+    padding:0 20px;
+    border-radius:9px;
+    font-weight:700;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact{
+    background:#fff;
+}
+
+.contact-form{
+    max-width:750px;
+    margin:auto;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    border:1px solid #e5e5e5;
+    outline:none;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#e87532;
+}
+
+.contact-form textarea{
+    height:150px;
+    resize:none;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer{
+    background:#171717;
+    color:#fff;
+    padding-top:70px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand p,
+.footer-social p{
+    color:#999;
+    font-size:13px;
+    margin-top:20px;
+    max-width:260px;
+}
+
+.footer-links h3,
+.footer-social h3{
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.footer-links a{
+    color:#999;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:#e87532;
+}
+
+.social-icons{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+}
+
+.social-icons a{
+    width:38px;
+    height:38px;
+    background:#292929;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#e87532;
+}
+
+.footer-bottom{
+    border-top:1px solid #2b2b2b;
+    margin-top:50px;
+    padding:20px 0;
+    text-align:center;
+}
+
+.footer-bottom p{
+    color:#777;
+    font-size:12px;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:10px;
+    background:#e87532;
+    color:#fff;
+    display:none;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+
+/* =========================================
+   SEARCH POPUP
+========================================= */
+
+.search-popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:5000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.search-popup.active{
+    display:flex;
+}
+
+.search-box{
+    width:100%;
+    max-width:500px;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    position:relative;
+}
+
+.search-box h2{
+    margin-bottom:20px;
+    font-family:'Playfair Display',serif;
+}
+
+.search-box input{
+    width:100%;
+    border:1px solid #ddd;
+    outline:none;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.search-box button{
+    border:none;
+    background:#e87532;
+    color:#fff;
+    padding:14px 20px;
+    border-radius:10px;
+    font-weight:700;
+}
+
+.close-search{
+    position:absolute;
+    right:15px;
+    top:15px;
+    background:none !important;
+    color:#333 !important;
+    padding:5px !important;
+    font-size:20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        background:#fffdf9;
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        gap:20px;
+        box-shadow:0 15px 25px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .nav-button{
+        display:none;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:60px 0;
+    }
+
+    .hero-left > p{
+        margin:auto;
+    }
+
+    .hero-buttons,
+    .hero-stats{
+        justify-content:center;
+    }
+
+    .food-card-main{
+        width:360px;
+        height:360px;
+    }
+
+    .food-emoji{
+        width:250px;
+        height:250px;
+        font-size:120px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .recipe-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter-box{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .section-padding{
+        padding:70px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .section-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .section-top h2,
+    .center-heading h2{
+        font-size:34px;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-stats{
+        gap:25px;
+    }
+
+    .food-card-main{
+        width:290px;
+        height:290px;
+    }
+
+    .food-emoji{
+        width:210px;
+        height:210px;
+        font-size:90px;
+    }
+
+    .floating-one{
+        left:-15px;
+    }
+
+    .floating-two{
+        right:-15px;
+    }
+
+    .about-text h2{
+        font-size:38px;
+    }
+
+    .about-visual{
+        min-height:350px;
+    }
+
+    .about-food-circle{
+        width:220px;
+        height:220px;
+        font-size:100px;
+    }
+
+    .experience-card{
+        right:10px;
+        bottom:20px;
+    }
+
+    .newsletter-box{
+        padding:35px 25px;
+    }
+
+    .newsletter-box h2{
+        font-size:31px;
+    }
+
+    .newsletter-box form{
+        flex-direction:column;
+    }
+
+    .newsletter-box button{
+        padding:15px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+/* =========================================
+   CATEGORY PAGES
+========================================= */
+
+.page-header{
+    background:#fffdf9;
+    position:sticky;
+}
+
+.page-hero{
+    padding:110px 0 80px;
+    background:#fff0e5;
+    text-align:center;
+}
+
+.page-hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.page-hero h1 span{
+    color:#e87532;
+}
+
+.page-hero p{
+    max-width:600px;
+    margin:auto;
+    color:#777;
+}
+
+.breadcrumb{
+    margin-top:22px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    font-size:13px;
+    color:#888;
+}
+
+.breadcrumb a{
+    color:#e87532;
+    font-weight:600;
+}
+
+
+/* BREAKFAST CARD COLORS */
+
+.breakfast-orange{
+    background:#f7d6c2;
+}
+
+.breakfast-yellow{
+    background:#f8e4a9;
+}
+
+.breakfast-cream{
+    background:#f4dfbd;
+}
+
+.breakfast-green{
+    background:#d6ead2;
+}
+
+.breakfast-pink{
+    background:#f4d6d6;
+}
+
+.breakfast-red{
+    background:#f0c6bb;
+}
+
+
+/* CATEGORY CTA */
+
+.breakfast-cta{
+    padding:70px 0;
+    background:#fff;
+}
+
+.breakfast-cta .container{
+    background:#242424;
+    color:#fff;
+    padding:45px 55px;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.breakfast-cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    margin-bottom:8px;
+}
+
+.breakfast-cta p{
+    color:#aaa;
+}
+
+@media(max-width:600px){
+
+    .page-hero{
+        padding:80px 0 60px;
+    }
+
+    .page-hero h1{
+        font-size:42px;
+    }
+
+    .breakfast-cta .container{
+        padding:35px 25px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .breakfast-cta h2{
+        font-size:30px;
+    }
+
+}
+/* LUNCH CARD COLORS */
+
+.lunch-yellow{
+    background:#f8e4a9;
+}
+
+.lunch-orange{
+    background:#f7d6c2;
+}
+
+.lunch-green{
+    background:#d6ead2;
+}
+
+.lunch-red{
+    background:#f0c6bb;
+}
+
+.lunch-cream{
+    background:#f4dfbd;
+}
+
+.lunch-pink{
+    background:#f4d6d6;
+}
+/* =========================
+   DINNER CARD COLORS
+========================= */
+
+.dinner-orange{
+    background:#f7d6c2;
+}
+
+.dinner-yellow{
+    background:#f8e4a9;
+}
+
+.dinner-green{
+    background:#d6ead2;
+}
+/* =========================
+   SNACKS CARD COLORS
+========================= */
+
+.snacks-orange{
+    background:#f7d6c2;
+}
+
+.snacks-yellow{
+    background:#f8e4a9;
+}
+
+.snacks-green{
+    background:#d6ead2;
+}
+/* =========================
+   DESSERT CARD COLORS
+========================= */
+
+.dessert-pink{
+    background:#f4d6d6;
+}
+
+.dessert-yellow{
+    background:#f8e4a9;
+}
+
+.dessert-cream{
+    background:#f4dfbd;
+}
+/* =========================
+   DRINKS CARD COLORS
+========================= */
+
+.drinks-orange{
+    background:#f7d6c2;
+}
+
+.drinks-yellow{
+    background:#f8e4a9;
+}
+
+.drinks-pink{
+    background:#f4d6d6;
+}
+/* =========================================
+   RECIPE DETAIL PAGE
+========================================= */
+
+.recipe-breadcrumb{
+    padding:100px 0 20px;
+    background:#fffdf9;
+    font-size:14px;
+}
+
+.recipe-breadcrumb a{
+    color:#e87532;
+    font-weight:600;
+}
+
+.recipe-breadcrumb span{
+    color:#777;
+}
+
+
+.recipe-detail-hero{
+    padding:40px 0 80px;
+    background:#fffdf9;
+}
+
+.recipe-detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+
+.recipe-main-image{
+    width:100%;
+}
+
+
+.poha-image-placeholder{
+    width:100%;
+    min-height:450px;
+    background:#f7d6c2;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:150px;
+}
+
+
+.recipe-main-content h1{
+    font-family:'Playfair Display',serif;
+    font-size:52px;
+    line-height:1.2;
+    margin:15px 0;
+}
+
+.recipe-main-content h1 span{
+    color:#e87532;
+}
+
+.recipe-intro{
+    color:#777;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+
+.recipe-meta{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.recipe-meta div{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    padding:15px;
+    background:#fff;
+    border-radius:12px;
+}
+
+.recipe-meta i{
+    color:#e87532;
+    font-size:20px;
+}
+
+.recipe-meta span{
+    display:flex;
+    flex-direction:column;
+    font-size:13px;
+    font-weight:600;
+}
+
+.recipe-meta small{
+    color:#999;
+    font-weight:400;
+}
+
+
+.recipe-detail-content{
+    padding:90px 0;
+    background:#fff;
+}
+
+.recipe-content-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:50px;
+}
+
+
+.recipe-box{
+    background:#fffdf9;
+    padding:35px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.recipe-box h2{
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    margin-bottom:25px;
+}
+
+
+.ingredients-list{
+    list-style:none;
+}
+
+.ingredients-list li{
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+    color:#555;
+}
+
+.ingredients-list li::before{
+    content:"✓";
+    color:#e87532;
+    font-weight:bold;
+    margin-right:12px;
+}
+
+
+.recipe-step{
+    display:flex;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid #eee;
+}
+
+.recipe-step > span{
+    min-width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#e87532;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+}
+
+.recipe-step h3{
+    margin-bottom:8px;
+}
+
+.recipe-step p{
+    color:#777;
+    line-height:1.7;
+}
+
+
+.recipe-sidebar{
+    background:#fff0e5;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.recipe-sidebar h3{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.sidebar-info p{
+    padding:15px 0;
+    border-bottom:1px solid #e8d6c8;
+    display:flex;
+    justify-content:space-between;
+}
+
+.sidebar-info span{
+    color:#777;
+}
+
+.tip-box{
+    background:#f8e4a9;
+}
+
+.tip-box p{
+    color:#666;
+    line-height:1.7;
+}
+
+
+.recipe-back-section{
+    padding:20px 0 80px;
+    background:#fff;
+    text-align:center;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .recipe-detail-grid,
+    .recipe-content-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .recipe-main-content h1{
+        font-size:40px;
+    }
+
+    .recipe-meta{
+        grid-template-columns:1fr;
+    }
+
+    .poha-image-placeholder{
+        min-height:300px;
+        font-size:100px;
+    }
+
+}
+/* =========================
+   IDLI RECIPE IMAGE
+========================= */
+
+.idli-image-placeholder{
+    width:100%;
+    min-height:450px;
+    background:#f4ead8;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:150px;
+}
+
+
+@media(max-width:800px){
+
+    .idli-image-placeholder{
+        min-height:300px;
+        font-size:100px;
+    }
+
+}
+/* =========================
+   MASALA DOSA RECIPE IMAGE
+========================= */
+
+.dosa-image-placeholder{
+    width:100%;
+    min-height:450px;
+    background:#f6dfbd;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:150px;
+}
+
+@media(max-width:800px){
+
+    .dosa-image-placeholder{
+        min-height:300px;
+        font-size:100px;
+    }
+
+}
+/* =========================
+   BREAD OMELETTE IMAGE
+========================= */
+
+.bread-omelette-image-placeholder{
+    width:100%;
+    min-height:450px;
+    background:#f3d6b3;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:120px;
+}
+
+@media(max-width:800px){
+
+    .bread-omelette-image-placeholder{
+        min-height:300px;
+        font-size:80px;
+    }
+
+}
+/* =========================
+   EGG BHURJI RECIPE IMAGE
+========================= */
+
+.egg-bhurji-image-placeholder{
+    width:100%;
+    min-height:450px;
+    background:#f5ddb2;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:150px;
+}
+
+@media(max-width:800px){
+
+    .egg-bhurji-image-placeholder{
+        min-height:300px;
+        font-size:100px;
+    }
+
+}
