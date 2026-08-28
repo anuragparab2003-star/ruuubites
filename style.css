@@ -1631,3 +1631,23 @@ button{
     }
 
 }
+.about-food-circle{
+    overflow: hidden;
+}
+
+.about-food-circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.about-food-circle{
+    overflow: hidden;
+}
+
+.about-food-circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
